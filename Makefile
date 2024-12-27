@@ -3,7 +3,7 @@ $(eval GIT_COMMIT = $(shell git rev-parse HEAD))
 ALPINE_VERSION=3.21
 
 DOCKER_BASE=gmkey/http-to-https
-DOCKER_TAG=1.3
+DOCKER_TAG=latest
 
 default: build
 

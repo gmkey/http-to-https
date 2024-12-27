@@ -10,7 +10,7 @@ change (which would happen with old clients using 301/302).
 Running:
 --------
 
-``docker run --rm -p80:80 -d realkinetic/http-to-https:latest``.
+``docker run --rm -p80:80 -d gmkey/http-to-https:latest``.
 
 Building
 --------

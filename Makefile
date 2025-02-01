@@ -1,10 +1,10 @@
 $(eval GIT_COMMIT = $(shell git rev-parse HEAD))
 
-ALPINE_VERSION=3.21
+ALPINE_VERSION=latest
 
 DOCKER_BASE=gmkey/http-to-https
 DOCKER_TAG=latest
-
+DOCKER_TAG2=2.1
 default: build
 
 clean:
@@ -18,7 +18,7 @@ Dockerfile: Dockerfile.template
 		Dockerfile.template > Dockerfile
 
 build: Dockerfile
-	docker build -t $(DOCKER_BASE):$(DOCKER_TAG) .
+	docker buildx build  --platform linux/amd64,linux/arm64 -t $(DOCKER_BASE):$(DOCKER_TAG) -t $(DOCKER_BASE):$(DOCKER_TAG2) .
 
 run: build
 	docker run -it -p80:80 --rm $(DOCKER_BASE):$(DOCKER_TAG)
@@ -27,4 +27,4 @@ debug: build
 	docker run -it -p80:80 --rm $(DOCKER_BASE):$(DOCKER_TAG) /bin/sh
 
 push: build
-	docker push $(DOCKER_BASE):$(DOCKER_TAG)
+	docker push --all-tags $(DOCKER_BASE)

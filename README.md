@@ -27,4 +27,4 @@ Maintenance:
 ------------
 Edit the Dockerfile.template to reflect your changes (possibly http.conf/global.conf) and re-build.
 
-## Mainly used to circumvent Google Compute Engine Load Balancer limitations regarding hsts and http/https redirects. This is now resolved, but there might still be some alternative use cases.Forked from https://github.com/RealKinetic/http-to-https by https://github.com/gmkey/http-to-https
+## Mainly used to circumvent Google Compute Engine Load Balancer limitations regarding hsts and http/https redirects. This is now resolved, but there might still be some alternative use cases.

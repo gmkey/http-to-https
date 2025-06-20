@@ -4,7 +4,7 @@ ALPINE_VERSION=latest
 
 DOCKER_BASE=gmkey/http-to-https
 DOCKER_TAG=latest
-DOCKER_TAG2=2.1
+DOCKER_TAG2=2.2
 default: build
 
 clean:
